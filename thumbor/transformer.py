@@ -236,8 +236,12 @@ class Transformer(object):
 
     def manual_crop(self):
         if self.context.request.should_crop:
+            #def limit(dimension, maximum):
+            #    return min(max(dimension, 0), maximum)
+            #def limit(dimension, maximum):
+            #    return min(dimension,maximum)
             def limit(dimension, maximum):
-                return min(max(dimension, 0), maximum)
+                return dimension
 
             source_width, source_height = self.engine.size
             crop = self.context.request.crop
